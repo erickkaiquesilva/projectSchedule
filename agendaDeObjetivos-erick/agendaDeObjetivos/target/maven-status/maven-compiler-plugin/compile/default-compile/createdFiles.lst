@@ -1,0 +1,7 @@
+br\com\bandtec\AgendaDeObjetivos\controller\LoginController.class
+br\com\bandtec\AgendaDeObjetivos\controller\UsuarioIdade.class
+br\com\bandtec\AgendaDeObjetivos\AgendaDeObjetivosApplication.class
+br\com\bandtec\AgendaDeObjetivos\controller\UsuariosIdadeController.class
+br\com\bandtec\AgendaDeObjetivos\controller\Usuario.class
+br\com\bandtec\AgendaDeObjetivos\controller\Credenciais.class
+br\com\bandtec\AgendaDeObjetivos\controller\UsuariosController.class

@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: br.com.bandtec.AgendaDeObjetivos.controller.LoginControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in br.com.bandtec.AgendaDeObjetivos.controller.LoginControllerTest
+loginComFalha(br.com.bandtec.AgendaDeObjetivos.controller.LoginControllerTest)  Time elapsed: 0.002 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<Erro[]> but was:<Erro[r]>
+	at br.com.bandtec.AgendaDeObjetivos.controller.LoginControllerTest.loginComFalha(LoginControllerTest.java:30)
+
+loginSucesso(br.com.bandtec.AgendaDeObjetivos.controller.LoginControllerTest)  Time elapsed: 0 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<Sucess[]o> but was:<Sucess[ã]o>
+	at br.com.bandtec.AgendaDeObjetivos.controller.LoginControllerTest.loginSucesso(LoginControllerTest.java:19)
+
