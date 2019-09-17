@@ -1,0 +1,6 @@
+#FileLock
+#Mon Sep 16 20:02:53 BRT 2019
+hostName=HSL222
+id=16d3c507b4331fd531fbfafb38e2d667a2af663a4f1
+method=file
+server=10.3.1.156\:52194
