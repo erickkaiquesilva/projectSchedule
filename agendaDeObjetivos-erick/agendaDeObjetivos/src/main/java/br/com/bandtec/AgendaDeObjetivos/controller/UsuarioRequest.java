@@ -1,5 +1,6 @@
 package br.com.bandtec.AgendaDeObjetivos.controller;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,17 +16,24 @@ public class UsuarioRequest {
 	@GeneratedValue
 	private Long id;
 	
-	@JsonProperty
-	private String login;
-	
-	@JsonProperty
-	private String senha;
+	@Embedded
+	private Credenciais credenciais;
+	private String nome;
+	private Integer idade;
 	
 	public UsuarioRequest() {}
 	
-	public UsuarioRequest(String login, String senha) {
+	public UsuarioRequest(String nome, Integer idade) {
 		super();
-		this.login = login;
-		this.senha = senha;
+		this.nome = nome;
+		this.idade = idade;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public Integer getIdade() {
+		return idade;
 	}
 }
