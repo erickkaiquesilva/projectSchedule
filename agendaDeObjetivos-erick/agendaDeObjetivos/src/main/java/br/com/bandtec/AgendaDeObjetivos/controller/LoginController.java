@@ -14,8 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
 	
+	private TodosUsuarios todosUsuarios;
 	
 	
+	
+	public LoginController(TodosUsuarios todosUsuarios) {
+		super();
+		this.todosUsuarios = todosUsuarios;
+	}
+
+
+
 	@PostMapping("/login")
 	public ResponseEntity<String> validarLogin(@RequestBody Credenciais credenciais) {
 		if (credenciais.getSenha().equals(credenciais.getLogin())) {
