@@ -13,26 +13,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UsuariosController {
+	
+	private TodosUsuarios todosusuarios;
 
-	private List<Usuario> usuarios;
-
-	public UsuariosController() {
-		this.usuarios = obterTodosUsuarios();
+	public UsuariosController(TodosUsuarios tds) {
+		this.todosusuarios = tds;
 	}
 	
 	@GetMapping("/usuarios/nome/{nomeDoUsuario}")
 	public ResponseEntity<List<Usuario>> obterPorNome(@PathVariable("nomeDoUsuario") String nome) {
-		List<Usuario> usuariosPorNome = new ArrayList<Usuario>();
-		for (Usuario u : usuarios) {
-			if (u.getNome().equals(nome)) {
-				usuariosPorNome.add(u);
-
-			}
-		}
-		if (usuariosPorNome.isEmpty()) {
+		
+		List<Usuario> usuarios = todosusuarios.porNome(nome);
+		
+		if(usuarios.isEmpty()) {
 			return ResponseEntity.noContent().build();
 		}
-		return ResponseEntity.ok(usuariosPorNome);
+		
+		return ResponseEntity.ok(usuarios);
 	}
 
 	private ArrayList<Usuario> obterTodosUsuarios() {
@@ -48,13 +45,11 @@ public class UsuariosController {
 	}
 	
 	@PostMapping("/usuarios")
-	public ResponseEntity<Usuario> cadastraUsuario(
-			@RequestBody Usuario usuario) {
-		this.usuarios.add(usuario);
+	public ResponseEntity<UsuarioRequest> cadastraUsuario(
+			@RequestBody UsuarioRequest usuario) {
+		todosusuarios.save(usuario);
 		return ResponseEntity.ok(usuario);
-		
 	}
-
 }
 
 
