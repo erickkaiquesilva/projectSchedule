@@ -33,6 +33,8 @@ public class Objetivo {
 	@JsonProperty
 	private LocalDate dataMaximaParaExecucao;
 	
+	private UsuarioRequest usuario;
+	
 	public Objetivo() {}
 	
 	public Objetivo(String titulo, String descricao, LocalDate dataMaximaParaExecucao, Prioridade prioridade) {
